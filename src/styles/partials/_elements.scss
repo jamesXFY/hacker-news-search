@@ -1,0 +1,28 @@
+@import '../variables';
+
+// don't apply to button links
+a:not([class*="btn"]) {
+  color: var(--colour-brand);
+  text-decoration: none;
+  transition: all .2s ease-in-out;
+
+  &:link,
+  &:visited {
+    color: var(--colour-brand, $neutral-primary);
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $neutral-tertiary;
+    text-decoration: none;
+    border-bottom: 1px solid $neutral-tertiary;
+  }
+}
+
+ul {
+  li {
+    padding-left: 10px;
+  }
+}

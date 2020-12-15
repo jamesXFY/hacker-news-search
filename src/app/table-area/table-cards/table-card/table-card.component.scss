@@ -1,0 +1,75 @@
+@import "src/styles/mixins";
+@import "src/styles/functions";
+@import "src/styles/variables";
+
+:host {
+  a {
+    color: $neutral-tertiary;
+    text-decoration: none;
+  }
+
+  p ::ng-deep {
+    @include font-sans-regular;
+  }
+
+  .table-card-container {
+    padding-right: rem(12);
+    padding-left: rem(12);
+    margin-right: auto;
+    margin-left: auto;
+    border: rem(1) solid $neutral-quinary;
+    box-shadow: $depth-3;
+    border-radius: rem(8);
+    color: var(--colour-brand-quaternary, $gold-brand-quaternary);
+    background-color: $neutral-septenary;
+    margin-top: rem(14);
+  }
+  .table-card-header,
+  .table-card-content,
+  .table-card-footer {
+    > div {
+      padding: rem(10px);
+      > div {
+        padding: 0 rem(10px);
+        @include font-sans-regular;
+        font-weight: normal;
+        font-size: rem(14px);
+        line-height: rem(14px);
+      }
+    }
+  }
+
+  .table-card-header {
+    > div {
+      > div {
+        padding: rem(4px) rem(10px);
+        border: rem(2px) solid $neutral-quinary;
+        border-radius: rem(8px);
+        color: $neutral-quinary;
+        background-color: var(--colour-accent-primary, $gold-accent-primary);
+      }
+    }
+  }
+
+  .news-title {
+    color: var(--colour-accent-primary, $gold-accent-primary);
+    font-weight: 500;
+    @include font-sans-bold;
+    font-size: rem(14);
+    line-height: rem(17);
+
+    a,
+    a:hover {
+      color: var(--colour-accent-primary, $gold-accent-primary);
+      border-bottom: none;
+    }
+  }
+
+  .card-properties {
+    @include font-sans-regular;
+    font-weight: normal;
+    font-size: rem(14px);
+    line-height: rem(14px);
+    color: $neutral-tertiary;
+  }
+}

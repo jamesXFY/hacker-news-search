@@ -1,0 +1,41 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+@import "src/styles/functions";
+
+:host {
+  @include font-sans-regular;
+}
+
+.pagination {
+  position: relative;
+  width: rem(300);
+  margin: auto;
+
+  @include device(tablet-only) {
+    width: rem(700px);
+  }
+
+  @include device(desktop) {
+    width: rem(1000px);
+  }
+
+  ::ng-deep {
+    .btn-hns.primary.base {
+      font-size: rem(16);
+      line-height: rem(18);
+      font-weight: 500;
+      margin-top: rem(15);
+
+      &:not(:disabled):not(.disabled) {
+        background-color: var(--color-accent-primary, $gold-accent-primary);
+      }
+
+      &:not(:disabled):not(.disabled):hover {
+        background-color: var(
+          --color-brand-primary,
+          $gold-brand-primary-darker
+        );
+      }
+    }
+  }
+}

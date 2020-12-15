@@ -1,0 +1,114 @@
+@import '../../variables';
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+// sentence case styling
+@mixin sentence-case {
+  text-transform: lowercase;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+@mixin device($size) {
+  @if $size == mobile {
+    // Would fit bootstraps xs size
+    @content;
+  }
+
+  @if $size == mobile-only {
+    @media screen and (min-width: $screen-xs-min) and (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+
+  @if $size == mobile-landscape {
+    @media screen and (min-width: $screen-sm) {
+      @content;
+    }
+  }
+
+  @if $size == mobile-landscape-only {
+    @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+
+  @if $size == tablet {
+    @media screen and (min-width: $screen-md) {
+      @content;
+    }
+  }
+
+  @if $size == tablet-only {
+    @media screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+
+  @if $size == desktop {
+    @media screen and (min-width: $screen-lg) {
+      @content;
+    }
+  }
+
+  @if $size == desktop-only {
+    @media screen and (min-width: $screen-lg-min) and (max-width: $screen-lg-max) {
+      @content;
+    }
+  }
+
+  @if $size == widescreen {
+    @media screen and (min-width: $screen-xl) {
+      @content;
+    }
+  }
+
+  @if $size == widescreen-only {
+    @media screen and (min-width: $screen-xl-min) {
+      @content;
+    }
+  }
+
+  @if $size == apollo-desktop {
+    @media screen and (min-width: $screen-desktop-min) {
+      @content;
+    }
+  }
+
+  @if $size == apollo-desktop-only {
+    @media screen and (min-width: $screen-desktop-min) {
+      @content;
+    }
+  }
+
+  @if $size == apollo-mobile {
+    @content;
+  }
+
+  @if $size == apollo-mobile-only {
+    @media screen and (min-width: $screen-mobile-min) and (max-width: $screen-mobile-max) {
+      @content;
+    }
+  }
+}
+
+@mixin set-link-colours($property, $default: $colour-primary, $hover: $colour-nobel) {
+  #{$property}: $default;
+
+  &:link,
+  &:visited {
+    #{$property}: $default;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    #{$property}: $hover;
+  }
+}

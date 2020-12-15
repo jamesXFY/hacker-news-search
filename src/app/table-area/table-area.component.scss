@@ -1,0 +1,217 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+@import "src/styles/functions";
+
+.search-area {
+  margin-bottom: rem(20);
+}
+
+.table-sort-filter {
+  width: 100%;
+
+  & > *,
+  ::ng-deep .sort-columns-container {
+    width: rem(359px);
+    margin: auto;
+
+    @include device(tablet-only) {
+      width: rem(740px);
+      background-color: $neutral-septenary;
+    }
+
+    @include device(desktop) {
+      width: rem(1170px);
+      background-color: $neutral-septenary;
+    }
+  }
+}
+
+.table-area.sticky-sorts-filters {
+  margin-top: rem(104px);
+  padding: unset !important;
+
+  &.extend-content {
+    @include device(desktop) {
+      margin-top: rem(268px);
+    }
+  }
+
+  .table-sort-filter {
+    position: fixed;
+    background-color: $colour-white;
+    box-shadow: var(--depth-2, $depth-2);
+    z-index: $strata-high;
+    left: 50%;
+    transform: translate(-50%, 0);
+    top: rem(-1px);
+
+    @media screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+      &.show-content {
+        top: 0;
+      }
+    }
+
+    @include device(desktop) {
+      top: 0;
+    }
+  }
+}
+
+.sort-filter-group {
+  border: rem(1px) solid $neutral-quinary;
+  border-radius: rem(8px) rem(8px) 0 0;
+  height: rem(52px);
+
+  .mobile-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: rem(1px) solid var(--brand-accent-secondary, $gold-accent-secondary);
+    box-sizing: border-box;
+    border-radius: rem(4px);
+    font-weight: 500;
+    font-size: rem(14px);
+    line-height: rem(16px);
+    color: var(--colour-brand-primary, $gold-brand-primary);
+    background-color: $neutral-septenary;
+    height: rem(38px);
+    margin: 0 rem(7px);
+    cursor: pointer;
+
+    span i {
+      padding-right: rem(12px);
+      vertical-align: baseline;
+    }
+  }
+}
+
+.sort-filter-mobile {
+  display: none !important;
+  @media screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+    display: flex !important;
+    border: none;
+  }
+}
+
+.sort-filter-default {
+  border: rem(1px) solid $neutral-quinary;
+  box-sizing: border-box;
+  border-radius: rem(8px) rem(8px) 0 0;
+  padding: 0 rem(20px);
+
+  .default-filter-container {
+    padding-bottom: rem(33px);
+  }
+}
+
+.sort-filter-default.sticky-filter {
+  border: none;
+  border-bottom: rem(1px) solid $neutral-quinary;
+
+  &.show-content {
+    display: block !important;
+  }
+}
+
+.default-cta {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: normal;
+  font-size: rem(14px);
+  line-height: rem(16px);
+  color: var(--colour-brand-tertiary, $gold-brand-tertiary);
+  height: rem(50px);
+  cursor: pointer;
+
+  ::ng-deep > span {
+    display: flex;
+    align-items: center;
+    margin: 0 0 0 rem(20px);
+    padding: 0 rem(10px);
+    height: rem(30px);
+    white-space: nowrap;
+  }
+
+  .filter-info {
+    background-color: rgba($one-brand-tertiary, 0.1);
+    color: $neutral-primary;
+
+    @media screen and (min-width: $screen-xs-min) and (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  i {
+    padding: rem(9px) 0;
+    vertical-align: baseline;
+  }
+
+  i:last-child {
+    position: absolute;
+    right: 0;
+  }
+}
+
+.default-cta.sort-filter-cta {
+  display: none;
+}
+
+.sticky-sorts {
+  ::ng-deep .sort-columns-container {
+    height: rem(60px);
+    border: none;
+
+    ::ng-deep .action-column {
+      border: none;
+
+      ::ng-deep .sort-dropdown {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border: none;
+
+        .sort-button {
+          border: rem(1px) solid $neutral-quinary;
+          height: rem(48px);
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .sort-filter-cta {
+    position: absolute;
+    background: $colour-white;
+    border: rem(1px) solid $neutral-quinary;
+    box-sizing: border-box;
+    border-radius: rem(4px);
+    top: calc(50% - 25px);
+
+    @include device(tablet-only) {
+      left: calc(50% - 370px);
+      display: flex;
+      padding: rem(5px);
+
+      ::ng-deep > span {
+        margin-left: rem(5px);
+        padding: 0;
+      }
+    }
+
+    @include device(desktop) {
+      left: calc(50% - 582px);
+      display: flex;
+      padding: rem(13px);
+    }
+  }
+}
+
+.hide-filter-content {
+  display: none !important;
+}
+
+.pagination-area {
+  padding-top: rem(10px);
+}

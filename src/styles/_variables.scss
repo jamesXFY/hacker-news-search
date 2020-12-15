@@ -1,0 +1,194 @@
+//
+// Vision Design System
+//
+
+// Canstar One
+$one-brand-primary: #0095a9;
+$one-brand-primary-lighter: #0095a9;
+$one-brand-primary-darker: #0c2340;
+$one-brand-primary-gradient: linear-gradient(to right, $one-brand-primary-lighter, $one-brand-primary-darker);
+$one-brand-secondary: #0c2340;
+$one-brand-tertiary: #0095a9;
+$one-brand-quaternary: #f8f8f8;
+$one-brand-quinary: #ffffff;
+$one-brand-senary: #212121;
+
+$one-accent-primary: #ffc844;
+$one-accent-secondary: #009ade;
+$one-accent-tertiary: #ff671d;
+$one-accent-quaternary: #006098;
+$one-accent-quinary: #fff8ef;
+
+$one-conversion-primary: #5cb85c;
+$one-conversion-primary-dark: darken($one-conversion-primary, 10%);
+
+$one-accent-primary-75: lighten($one-accent-primary, 25);
+$one-accent-primary-50: lighten($one-accent-primary, 50);
+$one-accent-primary-25: lighten($one-accent-primary, 75);
+$one-accent-secondary-75: lighten($one-accent-secondary, 25);
+$one-accent-secondary-50: lighten($one-accent-secondary, 50);
+$one-accent-secondary-25: lighten($one-accent-secondary, 75);
+$one-accent-tertiary-75: lighten($one-accent-tertiary, 25);
+$one-accent-tertiary-50: lighten($one-accent-tertiary, 50);
+$one-accent-tertiary-25: lighten($one-accent-tertiary, 75);
+$one-accent-quaternary-75: lighten($one-accent-quaternary, 25);
+$one-accent-quaternary-50: lighten($one-accent-quaternary, 50);
+$one-accent-quaternary-25: lighten($one-accent-quaternary, 75);
+
+// Canstar Gold
+$gold-brand-primary: #008390;
+$gold-brand-primary-lighter: #21a9a7;
+$gold-brand-primary-darker: #007580;
+$gold-brand-primary-gradient: linear-gradient(to right, $gold-brand-primary-lighter, $gold-brand-primary-darker);
+$gold-brand-secondary: #0c2340;
+$gold-brand-tertiary: #007580;
+$gold-brand-quaternary: #212121;
+$gold-brand-quinary: #f8f8f8;
+$gold-brand-senary: #ffffff;
+
+$gold-accent-primary: #0095a9;
+$gold-accent-secondary: #57b6b2;
+$gold-accent-tertiary: #ffc844;
+$gold-accent-quaternary: #ff671d;
+$gold-accent-quinary: #fff8ef;
+
+$gold-conversion-primary: #5cb85c;
+$gold-conversion-primary-dark: darken($gold-conversion-primary, 10%);
+
+$gold-accent-primary-75: lighten($gold-accent-primary, 25);
+$gold-accent-primary-50: lighten($gold-accent-primary, 50);
+$gold-accent-primary-25: lighten($gold-accent-primary, 75);
+$gold-accent-secondary-75: lighten($gold-accent-secondary, 25);
+$gold-accent-secondary-50: lighten($gold-accent-secondary, 50);
+$gold-accent-secondary-25: lighten($gold-accent-secondary, 75);
+$gold-accent-tertiary-75: lighten($gold-accent-tertiary, 25);
+$gold-accent-tertiary-50: lighten($gold-accent-tertiary, 50);
+$gold-accent-tertiary-25: lighten($gold-accent-tertiary, 75);
+$gold-accent-quaternary-75: lighten($gold-accent-quaternary, 25);
+$gold-accent-quaternary-50: lighten($gold-accent-quaternary, 50);
+$gold-accent-quaternary-25: lighten($gold-accent-quaternary, 75);
+
+// Canstar Blue
+$blue-brand-primary: #087db2;
+$blue-brand-primary-lighter: #009ade;
+$blue-brand-primary-darker: #00618d;
+$blue-brand-primary-gradient: linear-gradient(to right, $blue-brand-primary-lighter, $blue-brand-primary-darker);
+$blue-brand-secondary: #0c2340;
+$blue-brand-tertiary: #009ade;
+$blue-brand-quaternary: #212121;
+$blue-brand-quinary: #f8f8f8;
+$blue-brand-senary: #ffffff;
+
+$blue-accent-primary: #006089;
+$blue-accent-secondary: #0095a9;
+$blue-accent-tertiary: #a0d45e;
+$blue-accent-quaternary: #a25b95;
+$blue-accent-quinary: #f4f4f4;
+
+$blue-conversion-primary: #25cca8;
+$one-conversion-primary-dark: darken($one-conversion-primary, 10%);
+
+$blue-accent-primary-75: lighten($blue-accent-primary, 25);
+$blue-accent-primary-50: lighten($blue-accent-primary, 50);
+$blue-accent-primary-25: lighten($blue-accent-primary, 75);
+$blue-accent-secondary-75: lighten($blue-accent-secondary, 25);
+$blue-accent-secondary-50: lighten($blue-accent-secondary, 50);
+$blue-accent-secondary-25: lighten($blue-accent-secondary, 75);
+$blue-accent-tertiary-75: lighten($blue-accent-tertiary, 25);
+$blue-accent-tertiary-50: lighten($blue-accent-tertiary, 50);
+$blue-accent-tertiary-25: lighten($blue-accent-tertiary, 75);
+$blue-accent-quaternary-75: lighten($blue-accent-quaternary, 25);
+$blue-accent-quaternary-50: lighten($blue-accent-quaternary, 50);
+$blue-accent-quaternary-25: lighten($blue-accent-quaternary, 75);
+
+// Neutrals
+$neutral-primary: #212121;
+$neutral-secondary: #444444;
+$neutral-tertiary: #767676;
+$neutral-quaternary: #b6b6b6;
+$neutral-quinary: #DDDDDD;
+$neutral-senary: #f8f8f8;
+$neutral-septenary: #ffffff;
+
+//
+// Shadows & Borders
+//
+
+// Depth (AKA box-shadow)
+$depth-1: 0 1px 3px 0 rgba(9, 30, 66, 0.25);
+$depth-2: 0 3px 5px 0 rgba(9, 30, 66, 0.1);
+$depth-3: 0 3px 8px 0 rgba(9, 30, 66, 0.2);
+$depth-4: 0 5px 8px 0 rgba(9, 30, 66, 0.2);
+$depth-5: 0 7px 11px 0 rgba(9, 30, 66, 0.4);
+$depth-6: 0 3px 5px 0 rgba(9, 30, 66, 0.2);
+$depth-7: 0 1px 10px 0 rgba(146, 146, 146, 0.25);
+
+//
+// Breakpoint sizes
+//
+$screen-xs: 0px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 1170px;
+$screen-xl: 1200px;
+$screen-xs-min: $screen-xs;
+$screen-xs-max: $screen-sm - 1;
+$screen-sm-min: $screen-sm;
+$screen-sm-max: $screen-md - 1;
+$screen-md-min: $screen-md;
+$screen-md-max: $screen-lg - 1;
+$screen-lg-min: $screen-lg;
+$screen-lg-max: $screen-xl - 1;
+$screen-xl-min: $screen-xl;
+
+// Custom
+$screen-mobile: 991px;
+$screen-mobile-min: 0px;
+$screen-mobile-max: $screen-mobile;
+$screen-desktop-min: $screen-mobile-max + 1;
+
+//
+// Fonts
+//
+$font-base-size: 18px;
+$font-sans-regular: 'Walsheim Regular', Helvetica, Arial, sans-serif;
+$font-sans-regular-italic: 'Walsheim Regular Italic', Helvetica, Arial, sans-serif;
+$font-sans-medium: 'Walsheim Medium', Helvetica, Arial, sans-serif;
+$font-sans-medium-italic: 'Walsheim Medium Italic', Helvetica, Arial, sans-serif;
+$font-sans-bold: 'Walsheim Bold', Helvetica, Arial, sans-serif;
+$font-sans-bold-italic: 'Walsheim Bold Italic', Helvetica, Arial, sans-serif;
+$font-serif: Georgia, serif;
+$font-icons: 'Font Awesome 5 Pro';
+$font-cursive: GotchiHand, Helvetica, Arial, sans-serif;
+
+//
+// z-index
+//
+$strata-auto: 'auto';
+$strata-top: 99999;
+$strata-very-high: 500;
+$strata-high: 400;
+$strata-medium: 300;
+$strata-low: 200;
+$strata-very-low: 100;
+$strata-ground: 0;
+$strata-bottom: -100;
+
+// selector variables - temporary and are only for the purpose of hacking over the existing canstar_widgets into an apollo-like state
+$colour-alabaster-dark2: #f6f6f6;
+$colour-black: #000000;
+$colour-dim-azure: #a1b4c3;
+$colour-dove-grey: #727272;
+$colour-eastern-blue: #1998a6;
+$colour-limeade: #62b206;
+$colour-mercury-light: #e9e9e9;
+$colour-mexican-red: #ac2925;
+$colour-mine-shaft: #212121;
+$colour-nobel: #b6b6b6;
+$colour-oyster-pink: #ecd0cf;
+$colour-primary: #007a87;
+$colour-shadow-dark2: rgba(0, 0, 0, 0.5);
+$colour-silver: #ccc;
+$colour-white: #ffffff;
+$colour-early-dawn: #fff7e3;
+$gold-mist: #e7f4f5;

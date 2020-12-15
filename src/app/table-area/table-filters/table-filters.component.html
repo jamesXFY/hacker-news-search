@@ -1,0 +1,17 @@
+<div class="default-filter">
+    <div class="default-filter-content"
+         *ngFor="let tableFilter of tableFilters">
+        <hns-table-filter-dropdown-checkbox [tableFilter]="tableFilter">
+            <ng-container *ngTemplateOutlet="filterCheckBox; context:{tableFilter: tableFilter}"></ng-container>
+        </hns-table-filter-dropdown-checkbox>
+    </div>
+</div>
+
+<ng-template #filterCheckBox
+             let-tableFilter="tableFilter">
+    <hns-table-filter-checkbox-list [filterTitle]="tableFilter.title"
+                                    [filterType]="tableFilter.type"
+                                    [filterOptions]="tableFilter.properties.values"
+                                    (filterOptionEmitter)="filterOptionUpdated(tableFilter, $event)">
+    </hns-table-filter-checkbox-list>
+</ng-template>

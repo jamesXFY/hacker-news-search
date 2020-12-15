@@ -1,0 +1,13 @@
+<button class="btn-hns"
+        [ngClass]="[type, size, customeClass]"
+        (click)="onClickFn()">
+  <ng-container *ngTemplateOutlet="buttonContent"></ng-container>
+</button>
+
+<ng-template #buttonContent>
+  <i *ngIf="containsIcon && iconPosition === 'left'"
+     [ngClass]="[icon, iconPosition]"></i>
+  <ng-content></ng-content>
+  <i *ngIf="containsIcon && iconPosition === 'right'"
+     [ngClass]="[icon, iconPosition]"></i>
+</ng-template>

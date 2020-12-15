@@ -1,0 +1,41 @@
+/**
+ * Takes a pixel value (either with or without units) and converts it into the correct
+ * rem value based on the root font size variable.
+ */
+ @function rem($pixels) {
+  $base: $font-base-size;
+
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($base)) {
+    $base: $base * 1px;
+  }
+
+  @return $pixels / $base * 1rem;
+}
+
+/**
+ * Takes a pixel value (either with or without units) and converts it into the correct
+ * em value, based on a provided base value (can also be unitless).
+ */
+@function em($pixels, $base) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($base)) {
+    $base: $base * 1px;
+  }
+
+  @return $pixels / $base * 1em;
+}
+
+/**
+ * Given a desired line height in pixels (first parameter), and the texts font size in
+ * pixels (second parameter), this function calculates the desired unitless line height.
+ */
+@function get-line-height($line-height, $font-size) {
+  @return $line-height / $font-size;
+}

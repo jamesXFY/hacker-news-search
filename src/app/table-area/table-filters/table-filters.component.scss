@@ -1,0 +1,34 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+@import 'src/styles/functions';
+
+:host {
+  @include font-sans-regular;
+}
+
+.default-filter {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-right: rem(-16px);
+
+  .default-filter-content {
+    min-width: rem(160.22px);
+
+    @include device(desktop) {
+      min-width: rem(144px);
+    }
+
+    position: relative;
+    margin-top: rem(20px);
+    margin-right: rem(16px);
+  }
+}
+
+.default-filter {
+  display: block;
+
+  @include device(tablet) {
+    display: flex;
+  }
+}

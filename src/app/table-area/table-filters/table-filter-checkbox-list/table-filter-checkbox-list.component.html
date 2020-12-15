@@ -1,0 +1,15 @@
+<div class="filter-title">
+    {{filterTitle}}
+    <a [ngClass]="{'checked': hasSelected}"
+       (click)="removeAllSelected()">Clear</a>
+</div>
+<div class="filter-options"
+     *ngFor="let filterOption of filterOptions">
+    <hns-table-filter-checkbox class="filter-option"
+                               [checkboxType]="filterType"
+                               [displayText]="filterOption.text"
+                               [name]="filterTitle"
+                               [selected]="filterOption.selected"
+                               (valueChange)="updateOption(filterOption, $event)">
+    </hns-table-filter-checkbox>
+</div>

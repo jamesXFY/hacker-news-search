@@ -1,0 +1,530 @@
+// selector styles shared between different variations of selector:
+// hub page, sidebar, selector modal
+.selector-base {
+  @include font-sans-regular;
+  position: relative;
+  min-height: 340px;
+  padding: 30px 0;
+  margin-bottom: 30px;
+  color: $colour-mine-shaft;
+
+  .content-wrap {
+    line-height: 1.2;
+  }
+
+  .selector {
+    @include font-sans-regular;
+    background-color: $colour-primary;
+  }
+}
+
+.simplified-selector-panel-base {
+  @media screen and (min-width: $screen-sm-min) {
+    position: relative;
+  }
+
+  h2 {
+    text-align: left;
+    font-size: 22px;
+    padding: 0 0 4px 8px;
+    color: $colour-white;
+    margin: 0;
+  }
+
+  label {
+    @media screen and (min-width: $screen-sm-min) {
+      display: block;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+
+    @media screen and (min-width: $screen-sm-min) {
+      float: none;
+      display: inline-block;
+
+      &.input-prepend {
+        position: relative;
+        top: -40px;
+      }
+    }
+  }
+
+  .form-control,
+  .select select {
+    color: $colour-black;
+    font-size: 18px;
+    height: 48px;
+    line-height: 1.2;
+    margin: 0;
+
+    &:after {
+      color: $colour-dove-grey;
+      font-weight: 600;
+    }
+  }
+
+  .select select {
+    // Account for 2px border to make same height as inputs
+    height: 50px;
+    display: inline-block;
+  }
+
+  .select select,
+  .input-group {
+    border-radius: 2px;
+    border: 1px solid $colour-nobel;
+    box-shadow: 0 3px 10px $colour-primary;
+  }
+
+  .input-group-addon {
+    background-color: $colour-mercury-light;
+    padding: 0 10px;
+    color: $colour-dove-grey;
+    font-size: 18px;
+    border-radius: 0;
+    border: none;
+  }
+
+  .provider-link {
+    margin-right: 0;
+    @media screen and (min-width: $screen-sm-min) {
+      text-align: right;
+      margin: -24px 0 0;
+      padding-right: 8px;
+    }
+    @media screen and (min-width: $screen-md-min) {
+      padding-right: 8.3333333333%;
+    }
+
+    > label {
+      display: none;
+    }
+
+    .control-indicator {
+      top: 0;
+      @media screen and (min-width: $screen-sm-min) {
+        left: auto;
+        right: 0;
+        top: .1rem;
+      }
+    }
+  }
+
+  .info-container {
+    margin: 0;
+    @media screen and (min-width: $screen-sm-min) {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
+
+  // sass-lint:disable class-name-format
+  .info_link_container {
+    pointer-events: none;
+    font-family: $font-cursive;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    @media screen and (min-width: $screen-sm-min) {
+      padding-top: 0;
+      padding-left: 8px;
+      margin-top: -56px;
+      text-align: left;
+    }
+    @media screen and (min-width: $screen-md-min) {
+      margin-top: -48px;
+    }
+
+    :after {
+      content: '\f118';
+      font-family: $font-icons;
+    }
+
+    a {
+      text-decoration: none;
+      color: $colour-white;
+      font-size: 18px;
+    }
+  }
+  // sass-lint:enable class-name-format
+
+  .compare-button-container {
+    @media screen and (min-width: $screen-sm-min) {
+      position: static;
+    }
+  }
+
+  button[type='submit'] {
+    background-color: $colour-limeade;
+    color: $colour-white;
+    border-radius: 2px;
+    font-weight: normal;
+    border: none;
+    box-shadow: 0 2px 10px $colour-primary;
+    font-size: 18px;
+    height: 48px;
+    width: 100%;
+    @media screen and (min-width: $screen-sm-min) {
+      position: absolute;
+      top: 73px;
+      width: 30%;
+      right: 15px;
+    }
+    @media screen and (min-width: $screen-md-min) {
+      width: 23.5%;
+      right: 8.3333333333%;
+      margin-right: 8px;
+    }
+
+    &:after {
+      font-family: $font-icons;
+      content: '\f054';
+      font-size: 14px;
+      padding-left: 6px;
+      height: 48px;
+    }
+  }
+}
+
+// selector modal
+// http://confluence.canstar.com.au/display/CW/Category+Selector+Modal
+// sass-lint:disable id-name-format
+#categorySelectorModal {
+  .modal-dialog {
+    width: 700px;
+  }
+
+  .modal-content {
+    display: contents;
+  }
+
+  .vertical-selector {
+    @extend .selector-base;
+    padding: 0;
+    margin: 0;
+    min-height: initial;
+    box-shadow: 0 5px 15px $colour-shadow-dark2;
+
+    .selector {
+      padding: 30px 10px;
+
+      h3 {
+        color: $colour-white;
+        margin: 2px 0;
+
+        &.profile-title {
+          font-size: 24px;
+          padding-bottom: 16px;
+          line-height: 32px;
+          font-weight: bold;
+          margin: 0;
+        }
+
+        &.h2 {
+          text-align: center;
+          font-family: $font-sans-bold;
+        }
+      }
+
+      .row:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  label,
+  label.control {
+    font-size: 16px;
+    color: $colour-white;
+    margin-bottom: 5px;
+  }
+
+  .inline-label div {
+    display: inline-block;
+  }
+
+  .form-control {
+    border: none;
+    color: $colour-dove-grey;
+    @include font-sans-regular;
+    @include placeholder-shown(color, $colour-silver);
+  }
+
+  .control-indicator {
+    top: .25em;
+  }
+
+  .btn {
+    @include font-sans-bold;
+  }
+
+  select {
+    background-color: $colour-white;
+
+    &.invalid-field {
+      border: 2px solid $colour-mexican-red;
+      background-color: $colour-oyster-pink;
+    }
+  }
+
+  .no-contact {
+    color: $colour-white;
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  // sass-lint:disable class-name-format
+  a.info_link {
+    @include set-link-colours(color,$colour-eastern-blue, $colour-nobel);
+  }
+  // sass-lint:enable class-name-format
+
+  .simplified-selector & {
+    .modal-dialog,
+    .modal-content {
+      width: 400px;
+    }
+
+    .modal-content {
+      border-radius: 8px;
+      border: none;
+    }
+
+    .selector {
+      background-color: $colour-eastern-blue;
+      padding: 24px 0;
+    }
+
+    #container_selector {
+      padding: 0 30px;
+
+      .selector-panel {
+        @extend .simplified-selector-panel-base;
+
+        h3 {
+          margin: 0 0 24px;
+        }
+
+        .simplified-hidden {
+          // sass-lint:disable-block no-important
+          display: none !important;
+        }
+
+        label {
+          margin: 10px 0 0;
+        }
+
+        .form-group,
+        .form-control,
+        select {
+          width: 100%;
+          margin: 0;
+        }
+
+        .form-group.input-prepend {
+          position: static;
+          top: auto;
+          margin-left: 0;
+        }
+
+        .provider-link {
+          text-align: center;
+          padding: 0;
+          margin: 12px 0 0;
+
+          label {
+            font-size: 13px;
+          }
+
+          .control.checkbox {
+            padding-left: 25px;
+            padding-right: 0;
+            margin-right: 0;
+          }
+
+          .control-indicator {
+            left: 0;
+            top: .2rem;
+          }
+        }
+
+        button[type='submit'] {
+          position: static;
+          width: 100%;
+          max-width: 300px;
+        }
+
+        // sass-lint:disable class-name-format
+        .info_link_container {
+          margin: 0;
+          @media screen and (min-width: $screen-sm-min) {
+            margin-top: 16px;
+          }
+          text-align: center;
+        }
+        // sass-lint:enable class-name-format
+      }
+    }
+  }
+}
+
+.selector {
+  background-color: $colour-alabaster-dark2;
+  margin: 20px 0;
+  padding: 24px 0;
+  position: relative;
+
+  .selector-heading {
+    line-height: 1.2;
+    padding: 0 15px;
+    text-align: left;
+    margin-right: 120px;
+    font-size: 24px;
+    color: $colour-dove-grey;
+    margin-top: 0;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $screen-md-min) {
+      padding: 0 24px;
+    }
+
+    #compare {
+      white-space: nowrap;
+    }
+  }
+
+  .selector-logo {
+    vertical-align: middle;
+    max-width: 100%;
+    position: absolute;
+    top: 7px;
+    right: 20px;
+  }
+
+  #alt_container_selector {
+    width: 100%;
+
+    .col-xs-12 {
+      padding: 0 16px;
+    }
+
+    .h2,
+    // sass-lint:disable class-name-format
+    .info_link,
+    .simplified-hidden {
+      display: none;
+    }
+
+    .compare-button-container {
+      @media screen and (min-width: $screen-md-min) {
+        padding: 0 24px;
+      }
+    }
+
+    .btn-lg {
+      @include font-sans-bold;
+      background-color: $colour-limeade;
+      color: $colour-white;
+      font-weight: 400;
+      border: none;
+      font-size: 18px;
+      height: 48px;
+      position: static;
+      width: 100%;
+      box-shadow: 0 2px 10px $colour-dove-grey;
+
+      &:hover {
+        background-color: $colour-limeade;
+        color: $colour-white;
+      }
+
+      &:after {
+        font-family: $font-icons;
+        content: '\f054';
+        font-size: 14px;
+        padding-left: 6px;
+        height: 48px;
+      }
+    }
+
+    .control-indicator {
+      left: 0;
+      border-color: $colour-white;
+      background: $colour-white;
+    }
+
+    .form-group {
+      padding: 0;
+
+      @media screen and (min-width: $screen-sm-min) {
+        width: 100%;
+      }
+
+      @media screen and (min-width: $screen-md-min) {
+        width: 33%;
+        padding: 0 8px;
+      }
+
+      label {
+        color: $colour-dove-grey;
+        text-align: left;
+        font-size: 16px;
+      }
+
+      .input-group-addon {
+        background-color: $colour-mercury-light;
+        padding: 0 10px;
+        color: $colour-dove-grey;
+        font-size: 18px;
+        border-radius: 0;
+        box-shadow: 0 1px 3px 0 $colour-white;
+        border: 1px solid $colour-nobel;
+      }
+
+      .form-control {
+        color: $colour-mine-shaft;
+        font-size: 18px;
+        height: 48px;
+        line-height: 1.2;
+        margin: 0;
+        border-radius: 2px;
+        background-color: $colour-white;
+        box-shadow: 0 1px 3px 0 $colour-nobel;
+        border: 1px solid $colour-nobel;
+        padding: 6px 8px;
+
+        &:focus {
+          // border-color: #A1B4C3;
+          box-shadow: 1px 1px 1px 1px $colour-dim-azure;
+        }
+      }
+    }
+
+    .provider-link {
+      text-align: left;
+      padding-left: 0;
+
+      @media screen and (min-width: $screen-md-min) {
+        padding: 0 8px;
+      }
+
+      .checkbox-inverse {
+        color: $colour-dove-grey;
+        font-size: 14px;
+        margin: 0;
+        padding-right: 0;
+        font-weight: lighter;
+        line-height: 1.2;
+      }
+
+      .checkbox-inverse input:checked ~ .control-indicator {
+        border: 2px solid $colour-white;
+        filter: invert(80%) hue-rotate(18deg) brightness(1.7);
+        border-radius: 1px;
+      }
+    }
+  }
+}

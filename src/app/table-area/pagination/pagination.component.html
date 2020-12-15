@@ -1,0 +1,22 @@
+<div class="pagination">
+    <div class="row"
+         fxLayoutAlign="center space-between">
+        <hns-button fxFlex="auto"
+                    fxLayoutAlign="start"
+                    fxLayout="row"
+                    [customeClass]="isFirstPage ? 'disabled' : ''"
+                    [type]="'primary'"
+                    (onclick)="loadPrevious()"
+                    [size]="'base'">Previous Page
+        </hns-button>
+
+        <hns-button fxFlex="auto"
+                    fxLayoutAlign="end"
+                    fxLayout="row"
+                    [customeClass]="isLastPage ? 'disabled' : ''"
+                    [type]="'primary'"
+                    (onclick)="loadNext()"
+                    [size]="'base'">Next Page
+        </hns-button>
+    </div>
+</div>

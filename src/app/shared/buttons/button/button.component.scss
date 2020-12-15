@@ -1,0 +1,123 @@
+@import "src/styles/functions";
+@import "src/styles/mixins";
+@import "src/styles/variables";
+
+:host {
+  display: inline-block;
+  vertical-align: middle;
+
+  .btn-hns {
+    border-radius: 4px;
+    @include font-sans-regular;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.125;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+
+    &:active,
+    &:hover {
+      cursor: pointer;
+    }
+
+    a:focus,
+    &:focus {
+      outline: none;
+    }
+
+    a {
+      display: block;
+      @include font-sans-regular;
+      font-weight: 500;
+      line-height: 1.125;
+      text-align: center;
+      width: 100%;
+    }
+
+    i {
+      &.left {
+        padding-right: 10px;
+      }
+
+      &.right {
+        padding-left: 10px;
+      }
+    }
+
+    @include device(tablet) {
+      font-size: rem(16);
+    }
+  }
+
+  .primary {
+    background-color: var(--colour-brand, $neutral-quaternary);
+    border: none;
+    box-shadow: var(--depth-2, $depth-2);
+    color: $neutral-septenary;
+
+    &:not(:disabled):not(.disabled):hover {
+      background-color: var(--colour-brand-dark, $neutral-tertiary);
+      border: none;
+      box-shadow: var(--depth-3, $depth-3);
+      color: $neutral-septenary;
+    }
+
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      background-color: var(--colour-brand, $neutral-quaternary);
+      border: none;
+      box-shadow: var(--depth-1, $depth-1);
+      color: $neutral-septenary;
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: $neutral-quinary;
+      border: none;
+      box-shadow: none;
+      color: $neutral-quaternary;
+      cursor: default;
+    }
+  }
+
+  .secondary {
+    background-color: $neutral-septenary;
+    border: var(--border-brand-1px);
+    box-shadow: var(--depth-2, $depth-2);
+    color: var(--colour-brand, $neutral-quaternary);
+
+    &:not(:disabled):not(.disabled):hover {
+      background-color: $neutral-senary;
+      border: var(--border-brand-1px);
+      box-shadow: var(--depth-3, $depth-3);
+      color: var(--colour-brand, $neutral-quaternary);
+    }
+
+    &:active,
+    &:not(:disabled):not(.disabled):active {
+      background-color: $neutral-senary;
+      border: var(--border-brand-1px);
+      box-shadow: var(--depth-1, $depth-1);
+      color: var(--colour-brand, $neutral-quaternary);
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: $neutral-septenary;
+      border: 1px solid $neutral-quaternary;
+      box-shadow: none;
+      color: $neutral-quaternary;
+      cursor: default;
+    }
+  }
+
+  .shrink {
+    height: unset;
+    width: unset;
+  }
+
+  .stretch {
+    height: 48px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+<div class="table-cards-container">
+  <ng-container *ngFor="let tableCard of tableCards">
+    <hns-table-card [url]="tableCard.url"
+                    [title]="tableCard.title"
+                    [commentText]="tableCard.comment_text"
+                    [points]="tableCard.points"
+                    [author]="tableCard.author"
+                    [created_at_i]="tableCard.created_at_i"
+                    [num_comments]="tableCard.num_comments"
+                    [firstTags]="tableCard._tags"></hns-table-card>
+  </ng-container>
+</div>

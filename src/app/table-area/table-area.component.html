@@ -1,0 +1,47 @@
+<div class="search-area">
+    <hns-search-bar (searchTextEmitter)="onSearchEmit($event)"></hns-search-bar>
+</div>
+<div class="table-area"
+     [ngClass]="{'sticky-sorts-filters': sticky, 'extend-content': showFilterContent}">
+    <div class="table-sort-filter"
+         [ngClass]="{'show-content': showFilterContent}">
+        <ng-container *ngTemplateOutlet="sortFilterView"></ng-container>
+    </div>
+    <hns-table-cards [tableCards]="tableCards"></hns-table-cards>
+</div>
+
+<div class="pagination-area">
+    <hns-pagination [page]="pagination"
+                    (paginationEmitter)="onPageEmit($event)"></hns-pagination>
+</div>
+
+<ng-template #sortFilterView>
+    <div class="sort-filter-default"
+         [ngClass]="{'sticky-filter': sticky, 'show-content': showFilterContent}">
+        <div class="default-cta"
+             (click)="toggleFilter()">
+            <i [class]="sticky? 'fas fa-times' : 'fas fa-sliders-h'"></i>
+            <ng-container *ngTemplateOutlet="sticky? closeFilter : moreFilter"></ng-container>
+            <i [class]="showFilterContent? 'fas fa-angle-up' : 'fas fa-angle-down'"></i>
+        </div>
+        <div class="default-filter-container"
+             [ngClass]="{'hide-filter-content': !showFilterContent}">
+            <ng-container *ngTemplateOutlet="filterContainer"></ng-container>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #filterContainer>
+    <hns-table-filters [tableFilters]="tableFilters"
+                       (filterEmitter)="onFilterEmit($event)"></hns-table-filters>
+</ng-template>
+
+<ng-template #closeFilter>
+    <span>Close filters ({{selectedFiltersNum}})</span>
+</ng-template>
+
+<ng-template #moreFilter>
+    <span>More filters ({{selectedFiltersNum}})</span>
+    <span class="filter-info">{{selectedFiltersNum}} filters applied for a better search experience. Click to
+        edit.</span>
+</ng-template>

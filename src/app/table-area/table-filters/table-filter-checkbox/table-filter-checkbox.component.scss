@@ -1,0 +1,62 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+@import 'src/styles/functions';
+
+:host {
+  @include font-sans-regular;
+
+  .checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      position: relative;
+      outline-style: none;
+      -webkit-appearance: none;
+      background-color: $neutral-septenary;
+      border: rem(1px) solid var(--colour-brand-tertiary, $gold-brand-tertiary);
+      box-sizing: border-box;
+      border-radius: rem(4px);
+      width: rem(22px);
+      height: rem(22px);
+      flex: 0 0 rem(22px);
+      margin: 0;
+      cursor: pointer;
+
+      &:checked {
+        background-color: var(--colour-brand-tertiary, $gold-brand-tertiary);
+        border: rem(1px) solid var(--colour-brand-tertiary, $gold-brand-tertiary);
+      }
+
+      &:after {
+        content: '';
+      }
+
+      &:checked:after {
+        @include font-awesome-free;
+        font-weight: 900;
+        color: $colour-white;
+        content: '\f00c';
+        font-size: rem(14px);
+        line-height: rem(14px);
+        pointer-events: none;
+        position: absolute;
+        top: calc(50% - 5.5px);
+        right: calc(50% - 6.5px);
+      }
+    }
+
+    label {
+      font-size: rem(14px);
+      font-weight: normal;
+      line-height: rem(17px);
+      color: $neutral-primary;
+      margin-left: rem(16px);
+      margin-bottom: 0;
+      padding-top: rem(2px);
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}

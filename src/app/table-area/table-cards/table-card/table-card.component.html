@@ -1,0 +1,70 @@
+<div class="table-card-container">
+  <div fxLayout="row"
+       fxLayoutAlign="center space-between"
+       class="table-card-header">
+    <div fxFlex="auto"
+         fxLayoutAlign="start">
+      <div class="news-comments">
+        {{num_comments ? num_comments: 0}} comments inside
+      </div>
+    </div>
+    <div fxFlex="auto"
+         fxLayoutAlign="end">
+      <div *ngIf="firstTags && firstTags.length > 0"
+           class="news-type">
+        {{firstTags[0]}}
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="row"
+       class="table-card-content">
+    <div fxFlex="auto"
+         fxLayout="column">
+      <div class="news-title"
+           *ngIf="url; else NewTitle">
+        <a href="{{url}}">
+          {{title}}
+        </a>
+      </div>
+      <div class="comment-text"
+           *ngIf="commentText"
+           [innerHTML]="commentText">
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="row"
+       fxLayoutAlign="center space-between"
+       class="table-card-content card-properties">
+    <div fxFlex="auto"
+         fxLayoutAlign="start">
+      <div class="news-points">
+        received {{points}} points
+      </div>
+    </div>
+
+    <div fxFlex="auto"
+         fxLayoutAlign="end">
+      <div class="news-author">
+        <a href="{{url}}">
+          Author: {{author}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div fxLayout="row"
+       class="table-card-footer">
+    <div fxFlex="auto">
+      <div class="news-date">
+        CREATED {{created_at_i!*1000 | date:'MMM dd yyyy'}}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- All templates -->
+<ng-template #NewTitle>
+  {{title}}
+</ng-template>

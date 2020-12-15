@@ -1,0 +1,41 @@
+@import "src/styles/variables";
+@import "src/styles/mixins";
+@import "src/styles/functions";
+
+:host {
+  @include font-sans-regular;
+}
+
+.search-bar {
+  position: relative;
+  width: rem(300);
+  margin: auto;
+
+  @include device(tablet-only) {
+    width: rem(700px);
+  }
+
+  @include device(desktop) {
+    width: rem(1000px);
+  }
+
+  .search-input {
+    width: calc(100% - 60px);
+    height: rem(30);
+    border: rem(1) solid $neutral-quinary;
+    box-shadow: $depth-3;
+    border-radius: rem(8);
+    padding: rem(5px) rem(30px);
+
+    &:focus {
+      border-width: rem(2);
+      outline: none;
+    }
+  }
+
+  .fas {
+    position: absolute;
+    top: calc(50% - 7px);
+    right: rem(10px);
+  }
+}

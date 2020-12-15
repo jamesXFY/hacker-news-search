@@ -1,0 +1,15 @@
+@import '../mixins';
+
+.embed-responsive {
+  height: auto;
+  margin: auto;
+  margin-bottom: 1rem;
+
+  @include device(apollo-desktop) {
+    width: 75%;
+  }
+}
+
+.embed-responsive-16by9 {
+  padding-bottom: unset;
+}

@@ -1,0 +1,33 @@
+@import '../../variables';
+
+@mixin font-sans-regular {
+  font-family: $font-sans-regular;
+}
+
+@mixin font-sans-regular-italic {
+  font-family: $font-sans-regular-italic;
+}
+
+@mixin font-sans-medium {
+  font-family: $font-sans-medium;
+}
+
+@mixin font-sans-medium-italic {
+  font-family: $font-sans-medium-italic;
+}
+
+@mixin font-sans-bold {
+  font-family: $font-sans-bold;
+}
+
+@mixin font-sans-bold-italic {
+  font-family: $font-sans-bold-italic;
+}
+
+@mixin font-serif {
+  font-family: $font-serif;
+}
+
+@mixin font-awesome-free {
+  font-family: $font-icons;
+}

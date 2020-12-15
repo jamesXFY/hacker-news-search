@@ -1,0 +1,16 @@
+@import 'src/styles/mixins';
+@import 'src/styles/functions';
+@import 'src/styles/variables';
+
+.table-cards-container {
+  margin: auto;
+  width: rem(359px);
+
+  @include device(tablet-only) {
+    width: rem(740px);
+  }
+
+  @include device(desktop) {
+    width: rem(1170px);
+  }
+}

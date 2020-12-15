@@ -1,0 +1,261 @@
+@import '../functions';
+@import '../mixins';
+@import '../variables';
+
+.table-embed {
+  background: $neutral-septenary;
+  border: 1px solid $neutral-quinary;
+  border-collapse: separate;
+  border-radius: rem(4);
+  border-spacing: 0;
+  box-shadow: $depth-5;
+  margin-bottom: 1.25em;
+  overflow: hidden;
+  width: auto;
+
+  @include device(desktop) {
+    margin-left: -5.5em;
+    margin-right: -5.5em;
+
+    tr {
+      vertical-align: top;
+
+      td {
+        padding: 0.875em;
+      }
+    }
+
+    tr:not(:first-child) td,
+    tr:not(:last-child) td {
+      border-top: 1px solid $neutral-quinary;
+    }
+  }
+
+  .table-header {
+    display: none;
+
+    @include device(desktop) {
+      background-color: $neutral-senary;
+      color: $neutral-tertiary;
+      display: table-row;
+      line-height: 1.25;
+      vertical-align: bottom;
+
+      th {
+        font-size: 0.8em;
+        font-weight: 500;
+        padding: 1em;
+      }
+
+      .sub-header {
+        display: inline-block;
+      }
+    }
+  }
+
+  .logo-col {
+    display: inline-block;
+    margin: 0.6em;
+    vertical-align: top;
+
+    @include device(desktop) {
+      display: table-cell;
+      vertical-align: inherit;
+      width: 17%;
+    }
+
+    img {
+      width: 4em;
+    }
+  }
+
+  .plan-col {
+    display: inline-block;
+    max-width: 75%;
+    margin: 0.6em;
+    width: 60%;
+
+    @include device(desktop) {
+      display: table-cell;
+      padding: 0.875em;
+      width: inherit;
+    }
+
+    p,
+    ul {
+      margin-bottom: 0.5em;
+    }
+
+    p,
+    li {
+      color: $neutral-primary;
+      font-size: rem(14);
+      @include font-sans-regular;
+    }
+
+    p {
+      font-size: 0.67em;
+      line-height: 1.66;
+      margin-bottom: 0.4em;
+    }
+
+    .plan-name {
+      font-size: 0.9em;
+      line-height: 1.12;
+      @include font-sans-medium;
+
+      a {
+        border-bottom: none;
+        color: var(--colour-brand);
+        font-weight: 500;
+        vertical-align: top;
+      }
+    }
+
+    ul {
+      font-size: 0.8em;
+      line-height: 1.53;
+      list-style: none;
+      padding-left: 2rem;
+
+      li {
+        display: flex;
+      }
+
+      li:before {
+        color: var(--colour-brand);
+        content: '\f00c';
+        font-size: 0.8em;
+        margin: 0 1em 0 -4em;
+        @include font-awesome-free;
+      }
+    }
+  }
+
+  .meta-header {
+    color: $neutral-tertiary;
+    display: block;
+    font-size: 0.67em;
+    line-height: 1.2;
+    @include font-sans-regular;
+
+    @include device(desktop) {
+      display: none;
+    }
+  }
+
+  .half-col {
+    display: inline-block;
+    max-width: 50%;
+    padding: 0 1em;
+    vertical-align: top;
+    width: 50%;
+
+    @include device(desktop) {
+      display: table-cell;
+      padding: 0.875em;
+      vertical-align: middle;
+      width: inherit;
+    }
+  }
+
+  .half-col:before {
+    border-top: 1px solid $neutral-quinary;
+    content: '';
+    display: block;
+    margin-top: -0.5em;
+    padding-bottom: 0.75em;
+    width: 130%;
+
+    @include device(desktop) {
+      display: none;
+    }
+  }
+
+  .price-col:before {
+    margin-left: -30%;
+
+    @include device(desktop) {
+      display: none;
+    }
+  }
+
+  .big-info {
+    color: $neutral-primary;
+    font-size: 0.9em;
+    @include font-sans-regular;
+  }
+
+  .CTA-col {
+    display: block;
+    max-width: 100%;
+    padding: 0.84em;
+    padding-bottom: 0;
+    width: 100%;
+
+    @include device(desktop) {
+      display: table-cell;
+      padding: 0.875em;
+      vertical-align: middle;
+      width: inherit;
+    }
+  }
+
+  .CTA-col:after {
+    content: '';
+    border-bottom: 1px solid $neutral-quinary;
+    display: block;
+    padding-bottom: 1em;
+
+    @include device(desktop) {
+      display: none;
+    }
+  }
+
+  .disclaimer-link,
+  .view-all-col {
+    display: block;
+    padding-top: 0.7em;
+    text-align: center;
+    margin: 0 0.6em;
+    @include font-sans-regular;
+
+    @include device(desktop) {
+      display: table-cell;
+      padding: 0.875em;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    a {
+      font-size: 0.7em;
+      border-bottom: none;
+      vertical-align: middle;
+    }
+
+    img {
+      margin-right: 0.5em;
+    }
+  }
+
+  .disclaimer-link {
+    padding: 0.5em 0;
+
+    @include device(desktop) {
+      padding: 0.875em;
+      text-align: right;
+    }
+  }
+
+  .view-all-col:after {
+    border-top: 1px solid $neutral-quinary;
+    content: '';
+    display: block;
+    margin: 0.8em auto 0 auto;
+    width: 75%;
+
+    @include device(desktop) {
+      display: none;
+    }
+  }
+}

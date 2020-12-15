@@ -1,0 +1,16 @@
+<label class="dropdown-title"
+       [for]="tableFilter?.title">{{tableFilter?.title}}</label>
+<button #toggleButton
+        class="dropdown-input"
+        type="button"
+        [id]="tableFilter?.title"
+        (click)="toggleDropdownState()">
+    <span class="content">{{buttonText}}</span>
+    <i class="fas fa-angle-down"></i>
+</button>
+
+<div #filterContent
+     class="dropdown-option-content"
+     [ngClass]="{'show-content': showContent}">
+    <ng-content></ng-content>
+</div>
